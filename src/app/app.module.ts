@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 
+// Para realizar requisições HTTP
+import { HttpClientModule } from '@angular/common/http';
+
 //imports components angular material
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -20,6 +23,10 @@ import { MatCardModule } from '@angular/material/card';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    // Requisições http
+    HttpClientModule,
+    // Angular Material
     MatButtonModule,
     MatInputModule,
     MatIconModule,

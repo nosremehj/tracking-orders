@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { TrackingService } from 'src/app/services/tracking.service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  
+  constructor(private orders: TrackingService) { }
+  order: any ='';
 
-  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.router.navigate['home']
   }
-
+  trackingOrders():void {
+    this.orders.trackingOrders(this.order).subscribe(data => {
+      console.log('Código de rastreio:', this.order)
+      console.log(data)
+    })
+  }
 }
