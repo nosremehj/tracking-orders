@@ -9,15 +9,18 @@ import { TrackingService } from 'src/app/services/tracking.service';
 export class HomeComponent implements OnInit {
   
   constructor(private orders: TrackingService) { }
-  order: any ='';
+
+  ordertest = "nm094424765Br";
+
+  order: string ='';
+  object: any [any] = []; 
 
 
   ngOnInit(): void {
   }
   trackingOrders():void {
-    this.orders.trackingOrders(this.order).subscribe(data => {
-      console.log('Código de rastreio:', this.order)
-      console.log(data)
+    this.orders.trackingOrders(this.order.toUpperCase()).subscribe(data => {
+      this.object = data;
     })
   }
 }
