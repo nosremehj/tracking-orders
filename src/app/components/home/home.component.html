@@ -1,29 +1,48 @@
 <mat-card class="card">
-    <h1>Recebidos Pagos</h1>
-    <mat-card-content>
-        <div class="container">
-            <mat-card-subtitle class="title">Deseja acompanhar sua encomenda? </mat-card-subtitle>
-            <div class="container">
-                <mat-form-field hintLabel="Máximo 13 caracteres" appearance="legacy">
-                    <mat-label>Informe o código de rastreio</mat-label>
-                    <input 
-                    [(ngModel)] = "order"
-                    name="order"
-                    required
-                    matInput #input 
-                    maxlength="13" 
-                    placeholder="Ex. AA987654321BR">
-                    <mat-hint align="end">{{input.value?.length || 0}}/13</mat-hint>
-                </mat-form-field>
-                <button (click)="trackingOrders()" mat-button><mat-icon>search</mat-icon></button>
-            </div>
+  <h1>Rastreamento de encomendas</h1>
+  <mat-card-content>
+    <div class="container">
+      <mat-card-subtitle class="title"
+        >Deseja acompanhar sua encomenda?
+      </mat-card-subtitle>
+      <div class="container">
+        <mat-form-field hintLabel="Máximo 13 caracteres" appearance="legacy">
+          <mat-label>Informe o código de rastreio</mat-label>
+          <input
+            [(ngModel)]="order"
+            name="order"
+            required
+            matInput
+            #input
+            maxlength="13"
+            placeholder="Ex. AA987654321BR"
+          />
+          <mat-hint align="end">{{ input.value?.length || 0 }}/13</mat-hint>
+        </mat-form-field>
+        <button (click)="trackingOrders()" mat-button>
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
 
-        </div>
-    </mat-card-content>
-    <footer>
-        &copy; 2022 - Recebidos Pagos -
-        <a mat-list-item href="https://github.com/nosremehj/tracking-orders" target="_blank">
-            Github
-        </a>
-    </footer>
+  <div class="card-result">
+    <div class="cards">
+      <span> Origem: </span>
+      <span> Destino </span>
+      <span> Data e hora: </span>
+      <span> Status: </span>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2022 - Recebidos Pagos -
+    <a
+      mat-list-item
+      href="https://github.com/nosremehj/tracking-orders"
+      target="_blank"
+    >
+      Github
+    </a>
+  </footer>
 </mat-card>
