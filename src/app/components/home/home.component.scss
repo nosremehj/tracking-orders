@@ -1,7 +1,7 @@
 .card {
     width: 95%;
     margin: 1rem auto;
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    background-color: rgba(2, 0, 36, 1);
     border-radius: 10px;
     padding: 1em 0 5em 0;
 
@@ -58,18 +58,21 @@
 }
 
 .card-result{
-    margin-left: 25px;
+    margin: 0px 5%;
+    display: flex;
+    flex-wrap: wrap;
 }
 .cards{
     transition: 5s;
-    border: 1.5px solid rgb(0, 0, 0);
+    margin: 5px 5px;
+    border: 1.5px solid #333333;
     border-radius: 3px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     width: 300px;
     height: 150px;
-    background-color: silver;
+    background-color: rgb(2, 0, 39);
     span{
         margin-top: 10px;
         width: 100%;
@@ -78,5 +81,5 @@
 .cards:hover{
     border: 1px solid white;
     transition: 5s;
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    background-color: #333333;
 }

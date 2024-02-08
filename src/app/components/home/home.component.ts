@@ -10,10 +10,11 @@ export class HomeComponent implements OnInit {
   
   constructor(private orders: TrackingService) { }
 
-  ordertest = "nm094424765Br";
+  // ordertest = "nm094424765Br";
 
   order: string ='';
   object: any [any] = []; 
+  origin: string = '';
 
 
   ngOnInit(): void {
@@ -21,6 +22,8 @@ export class HomeComponent implements OnInit {
   trackingOrders():void {
     this.orders.trackingOrders(this.order.toUpperCase()).subscribe(data => {
       this.object = data;
+    }, error => {
+      console.log(error)
     })
   }
 }

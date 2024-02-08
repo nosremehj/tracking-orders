@@ -1,5 +1,5 @@
 <mat-card class="card">
-  <h1>Rastreamento de encomendas</h1>
+  <h1>Rastreio de pedidos</h1>
   <mat-card-content>
     <div class="container">
       <mat-card-subtitle class="title"
@@ -27,16 +27,16 @@
   </mat-card-content>
 
   <div class="card-result">
-    <div class="cards">
-      <span> Origem: </span>
-      <span> Destino </span>
-      <span> Data e hora: </span>
-      <span> Status: </span>
+    <div class="cards" *ngFor="let event of object.eventos">
+      <span>{{ origin }}</span>
+      <span> Destino: {{event.local}} </span>
+      <span> Data e hora: {{event.data}} às {{event.hora}} </span>
+      <span> Último status: {{event.status}} </span>
     </div>
   </div>
 
   <footer>
-    &copy; 2022 - Recebidos Pagos -
+    &copy; 2022 - Rastreio de pedidos -
     <a
       mat-list-item
       href="https://github.com/nosremehj/tracking-orders"
